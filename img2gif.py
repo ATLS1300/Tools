@@ -27,8 +27,8 @@ try:
         size = input("Enter your image pixel size as: width,height (in integers please!) "  )
         img = img.resize(ast.literal_eval(size), resample=PIL.Image.BICUBIC)
     if decide2.lower()!='n':
-        scale = int(input("Enter desired scale value. (Ex: 2 will scale twice the size, 0.5 will half it)  \n"))
-        img = img.resize((img.size[0]*scale, img.size[1]*scale), resample=PIL.Image.BICUBIC)
+        scale = float(input("Enter desired scale value. (Ex: 2 will scale twice the size, 0.5 will half it)  \n"))
+        img = img.resize((int(img.size[0]*scale), int(img.size[1]*scale)), resample=PIL.Image.BICUBIC)
     
     img.convert('RGB').save(outputName) #convert to filetype and save
     print('Saved in the current working folder. Have a nice day!')
